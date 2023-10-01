@@ -9,13 +9,28 @@
 /* Begin PBXBuildFile section */
 		FA12EB9B2AC5B18C004EB3ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EB9A2AC5B18C004EB3ED /* AppDelegate.swift */; };
 		FA12EB9D2AC5B18C004EB3ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EB9C2AC5B18C004EB3ED /* SceneDelegate.swift */; };
-		FA12EB9F2AC5B18C004EB3ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EB9E2AC5B18C004EB3ED /* ViewController.swift */; };
-		FA12EBA22AC5B18C004EB3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBA02AC5B18C004EB3ED /* Main.storyboard */; };
+		FA12EB9F2AC5B18C004EB3ED /* PreloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EB9E2AC5B18C004EB3ED /* PreloadViewController.swift */; };
 		FA12EBA42AC5B18D004EB3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBA32AC5B18D004EB3ED /* Assets.xcassets */; };
 		FA12EBA72AC5B18D004EB3ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBA52AC5B18D004EB3ED /* LaunchScreen.storyboard */; };
 		FA12EBB22AC5B18D004EB3ED /* FootballStatsTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBB12AC5B18D004EB3ED /* FootballStatsTestAppTests.swift */; };
 		FA12EBBC2AC5B18D004EB3ED /* FootballStatsTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBBB2AC5B18D004EB3ED /* FootballStatsTestAppUITests.swift */; };
 		FA12EBBE2AC5B18D004EB3ED /* FootballStatsTestAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBBD2AC5B18D004EB3ED /* FootballStatsTestAppUITestsLaunchTests.swift */; };
+		FA12EBCC2AC5EF02004EB3ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA12EBCB2AC5EF02004EB3ED /* SnapKit */; };
+		FA12EBD12AC5F651004EB3ED /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBD02AC5F651004EB3ED /* OnboardingViewController.swift */; };
+		FA12EBD72AC5F9F8004EB3ED /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBD42AC5F9F8004EB3ED /* SFProDisplay-Semibold.ttf */; };
+		FA12EBD82AC5F9F8004EB3ED /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBD52AC5F9F8004EB3ED /* SFProDisplay-Bold.ttf */; };
+		FA12EBD92AC5F9F8004EB3ED /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBD62AC5F9F8004EB3ED /* SFProText-Regular.ttf */; };
+		FA12EBDC2AC62A34004EB3ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBDB2AC62A34004EB3ED /* MainViewController.swift */; };
+		FA12EBDE2AC62F22004EB3ED /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBDD2AC62F22004EB3ED /* SFProDisplay-Black.ttf */; };
+		FA12EBE12AC632CA004EB3ED /* MatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBE02AC632CA004EB3ED /* MatchCollectionViewCell.swift */; };
+		FA12EBE32AC63751004EB3ED /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBE22AC63751004EB3ED /* SFProDisplay-Medium.ttf */; };
+		FA12EBE52AC6392C004EB3ED /* SFProDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBE42AC6392C004EB3ED /* SFProDisplay-Heavy.ttf */; };
+		FA12EBEA2AC745B4004EB3ED /* DetailMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBE92AC745B4004EB3ED /* DetailMatchViewController.swift */; };
+		FA12EBEC2AC880ED004EB3ED /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBEB2AC880ED004EB3ED /* EventCollectionViewCell.swift */; };
+		FA12EBEF2AC89B29004EB3ED /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBEE2AC89B29004EB3ED /* EventData.swift */; };
+		FA12EC2D2AC9534D004EB3ED /* h2hCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EC2C2AC9534D004EB3ED /* h2hCollectionViewCell.swift */; };
+		FA12EC2F2AC97377004EB3ED /* H2HData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EC2E2AC97377004EB3ED /* H2HData.swift */; };
+		FA2590672AC9C44D00FD9178 /* MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2590662AC9C44D00FD9178 /* MatchData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +54,7 @@
 		FA12EB972AC5B18C004EB3ED /* FootballStatsTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballStatsTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA12EB9A2AC5B18C004EB3ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA12EB9C2AC5B18C004EB3ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA12EB9E2AC5B18C004EB3ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA12EBA12AC5B18C004EB3ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA12EB9E2AC5B18C004EB3ED /* PreloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadViewController.swift; sourceTree = "<group>"; };
 		FA12EBA32AC5B18D004EB3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA12EBA62AC5B18D004EB3ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA12EBA82AC5B18D004EB3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +63,21 @@
 		FA12EBB72AC5B18D004EB3ED /* FootballStatsTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootballStatsTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA12EBBB2AC5B18D004EB3ED /* FootballStatsTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballStatsTestAppUITests.swift; sourceTree = "<group>"; };
 		FA12EBBD2AC5B18D004EB3ED /* FootballStatsTestAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballStatsTestAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA12EBD02AC5F651004EB3ED /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		FA12EBD42AC5F9F8004EB3ED /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
+		FA12EBD52AC5F9F8004EB3ED /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		FA12EBD62AC5F9F8004EB3ED /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
+		FA12EBDB2AC62A34004EB3ED /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FA12EBDD2AC62F22004EB3ED /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
+		FA12EBE02AC632CA004EB3ED /* MatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA12EBE22AC63751004EB3ED /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		FA12EBE42AC6392C004EB3ED /* SFProDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Heavy.ttf"; sourceTree = "<group>"; };
+		FA12EBE92AC745B4004EB3ED /* DetailMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchViewController.swift; sourceTree = "<group>"; };
+		FA12EBEB2AC880ED004EB3ED /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA12EBEE2AC89B29004EB3ED /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		FA12EC2C2AC9534D004EB3ED /* h2hCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = h2hCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA12EC2E2AC97377004EB3ED /* H2HData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H2HData.swift; sourceTree = "<group>"; };
+		FA2590662AC9C44D00FD9178 /* MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA12EBCC2AC5EF02004EB3ED /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +129,11 @@
 		FA12EB992AC5B18C004EB3ED /* FootballStatsTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				FA12EB9A2AC5B18C004EB3ED /* AppDelegate.swift */,
-				FA12EB9C2AC5B18C004EB3ED /* SceneDelegate.swift */,
-				FA12EB9E2AC5B18C004EB3ED /* ViewController.swift */,
-				FA12EBA02AC5B18C004EB3ED /* Main.storyboard */,
-				FA12EBA32AC5B18D004EB3ED /* Assets.xcassets */,
-				FA12EBA52AC5B18D004EB3ED /* LaunchScreen.storyboard */,
+				FA12EBED2AC89B13004EB3ED /* Models */,
+				FA12EBDF2AC632A8004EB3ED /* Cells */,
+				FA12EBCE2AC5F608004EB3ED /* Controllers */,
+				FA12EBCD2AC5F5D3004EB3ED /* Application */,
+				FA12EBD22AC5F9C4004EB3ED /* Resources */,
 				FA12EBA82AC5B18D004EB3ED /* Info.plist */,
 			);
 			path = FootballStatsTestApp;
@@ -127,6 +156,69 @@
 			path = FootballStatsTestAppUITests;
 			sourceTree = "<group>";
 		};
+		FA12EBCD2AC5F5D3004EB3ED /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FA12EB9A2AC5B18C004EB3ED /* AppDelegate.swift */,
+				FA12EB9C2AC5B18C004EB3ED /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FA12EBCE2AC5F608004EB3ED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA12EBD02AC5F651004EB3ED /* OnboardingViewController.swift */,
+				FA12EB9E2AC5B18C004EB3ED /* PreloadViewController.swift */,
+				FA12EBDB2AC62A34004EB3ED /* MainViewController.swift */,
+				FA12EBE92AC745B4004EB3ED /* DetailMatchViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA12EBD22AC5F9C4004EB3ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA12EBD32AC5F9E6004EB3ED /* Fonts */,
+				FA12EBA32AC5B18D004EB3ED /* Assets.xcassets */,
+				FA12EBA52AC5B18D004EB3ED /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA12EBD32AC5F9E6004EB3ED /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA12EBE42AC6392C004EB3ED /* SFProDisplay-Heavy.ttf */,
+				FA12EBE22AC63751004EB3ED /* SFProDisplay-Medium.ttf */,
+				FA12EBDD2AC62F22004EB3ED /* SFProDisplay-Black.ttf */,
+				FA12EBD52AC5F9F8004EB3ED /* SFProDisplay-Bold.ttf */,
+				FA12EBD42AC5F9F8004EB3ED /* SFProDisplay-Semibold.ttf */,
+				FA12EBD62AC5F9F8004EB3ED /* SFProText-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FA12EBDF2AC632A8004EB3ED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA12EBE02AC632CA004EB3ED /* MatchCollectionViewCell.swift */,
+				FA12EBEB2AC880ED004EB3ED /* EventCollectionViewCell.swift */,
+				FA12EC2C2AC9534D004EB3ED /* h2hCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA12EBED2AC89B13004EB3ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA12EBEE2AC89B29004EB3ED /* EventData.swift */,
+				FA12EC2E2AC97377004EB3ED /* H2HData.swift */,
+				FA2590662AC9C44D00FD9178 /* MatchData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +235,9 @@
 			dependencies = (
 			);
 			name = FootballStatsTestApp;
+			packageProductDependencies = (
+				FA12EBCB2AC5EF02004EB3ED /* SnapKit */,
+			);
 			productName = FootballStatsTestApp;
 			productReference = FA12EB972AC5B18C004EB3ED /* FootballStatsTestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +310,9 @@
 				Base,
 			);
 			mainGroup = FA12EB8E2AC5B18C004EB3ED;
+			packageReferences = (
+				FA12EBCA2AC5EF02004EB3ED /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = FA12EB982AC5B18C004EB3ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,9 +329,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA12EBD72AC5F9F8004EB3ED /* SFProDisplay-Semibold.ttf in Resources */,
 				FA12EBA72AC5B18D004EB3ED /* LaunchScreen.storyboard in Resources */,
+				FA12EBD82AC5F9F8004EB3ED /* SFProDisplay-Bold.ttf in Resources */,
+				FA12EBE52AC6392C004EB3ED /* SFProDisplay-Heavy.ttf in Resources */,
+				FA12EBD92AC5F9F8004EB3ED /* SFProText-Regular.ttf in Resources */,
 				FA12EBA42AC5B18D004EB3ED /* Assets.xcassets in Resources */,
-				FA12EBA22AC5B18C004EB3ED /* Main.storyboard in Resources */,
+				FA12EBDE2AC62F22004EB3ED /* SFProDisplay-Black.ttf in Resources */,
+				FA12EBE32AC63751004EB3ED /* SFProDisplay-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +361,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA12EB9F2AC5B18C004EB3ED /* ViewController.swift in Sources */,
+				FA12EBEA2AC745B4004EB3ED /* DetailMatchViewController.swift in Sources */,
+				FA12EBEC2AC880ED004EB3ED /* EventCollectionViewCell.swift in Sources */,
+				FA12EBEF2AC89B29004EB3ED /* EventData.swift in Sources */,
+				FA12EBD12AC5F651004EB3ED /* OnboardingViewController.swift in Sources */,
+				FA12EB9F2AC5B18C004EB3ED /* PreloadViewController.swift in Sources */,
 				FA12EB9B2AC5B18C004EB3ED /* AppDelegate.swift in Sources */,
 				FA12EB9D2AC5B18C004EB3ED /* SceneDelegate.swift in Sources */,
+				FA12EC2D2AC9534D004EB3ED /* h2hCollectionViewCell.swift in Sources */,
+				FA12EBE12AC632CA004EB3ED /* MatchCollectionViewCell.swift in Sources */,
+				FA2590672AC9C44D00FD9178 /* MatchData.swift in Sources */,
+				FA12EC2F2AC97377004EB3ED /* H2HData.swift in Sources */,
+				FA12EBDC2AC62A34004EB3ED /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +409,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FA12EBA02AC5B18C004EB3ED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA12EBA12AC5B18C004EB3ED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA12EBA52AC5B18D004EB3ED /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -442,9 +546,8 @@
 				INFOPLIST_FILE = FootballStatsTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,9 +555,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladyslavnh.FootballStatsTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,9 +576,8 @@
 				INFOPLIST_FILE = FootballStatsTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,9 +585,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladyslavnh.FootballStatsTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -602,6 +710,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA12EBCA2AC5EF02004EB3ED /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA12EBCB2AC5EF02004EB3ED /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA12EBCA2AC5EF02004EB3ED /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA12EB8F2AC5B18C004EB3ED /* Project object */;
 }
