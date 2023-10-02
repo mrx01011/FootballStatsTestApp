@@ -8,15 +8,16 @@
 import UIKit
 import SnapKit
 
-final class EventCollectionViewCell: UICollectionViewCell {
+final class EventTableViewCell: UITableViewCell {
+    //MARK: Constraints
     private var imageLeadingConstraint: Constraint?
     private var imageTrailingConstraint: Constraint?
     private var eventLeadingConstraint: Constraint?
     private var eventTrailingConstraint: Constraint?
     private var minuteLeadingConstraint: Constraint?
     private var minuteTrailingConstraint: Constraint?
-    //MARK: UIElements
-    private let eventImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.ball))
+    //MARK: UI elements
+    private let eventImageView = UIImageView()
     private let eventTextLabel: UILabel = {
         let label = UILabel()
         label.textColor = GlobalConstants.Colors.green
@@ -81,8 +82,8 @@ final class EventCollectionViewCell: UICollectionViewCell {
         return label
     }()
     //MARK: Initialization
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         defaultConfigurations()
         setupUI()
     }
@@ -168,6 +169,7 @@ final class EventCollectionViewCell: UICollectionViewCell {
     }
     
     private func defaultConfigurations() {
+        selectionStyle = .none
         backgroundColor = GlobalConstants.Colors.dark
         layer.cornerRadius = 12
         layer.borderWidth = 1
@@ -175,7 +177,7 @@ final class EventCollectionViewCell: UICollectionViewCell {
     }
 }
 //MARK: - State
-extension EventCollectionViewCell {
+extension EventTableViewCell {
     enum Team: Int {
         case first
         case second

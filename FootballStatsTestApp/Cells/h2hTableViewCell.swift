@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class h2hCollectionViewCell: UICollectionViewCell {
+final class h2hTableViewCell: UITableViewCell {
     //MARK: UI elements
     private let firstTeamLabel: UILabel = {
         let label = UILabel()
@@ -43,8 +43,8 @@ final class h2hCollectionViewCell: UICollectionViewCell {
         return label
     }()
     //MARK: Initialization
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         defaultConfigurations()
         setupUI()
     }
@@ -64,6 +64,7 @@ final class h2hCollectionViewCell: UICollectionViewCell {
     }
     
     private func defaultConfigurations() {
+        selectionStyle = .none
         backgroundColor = GlobalConstants.Colors.dark
         layer.cornerRadius = 12
         layer.borderWidth = 1
@@ -89,8 +90,9 @@ final class h2hCollectionViewCell: UICollectionViewCell {
         }
         secondTeamImageView.snp.makeConstraints { make in
             make.top.equalTo(firstTeamImageView.snp.bottom).offset(12)
-            make.leading.equalTo(dateLabel.snp.trailing).offset(12)
+            make.centerX.equalTo(firstTeamImageView)
             make.width.height.equalTo(24)
+            make.bottom.equalToSuperview().inset(8)
         }
         firstTeamLabel.snp.makeConstraints { make in
             make.centerY.equalTo(firstTeamImageView)

@@ -10,7 +10,7 @@ import SnapKit
 
 final class MainViewController: UIViewController {
     private let mockMatchData = [MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
-                         MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
+                         MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC Royal Phoenix FC Royal Phoenix FC Royal Phoenix FC ", secondTeamName: "Royal Phoenix FC ", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
                          MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
                          MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09")]
     //MARK: UI elements
@@ -24,14 +24,14 @@ final class MainViewController: UIViewController {
         label.textAlignment = .left
         return label
     }()
-    private let footballMatchesCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = .clear
-        collectionView.register(MatchCollectionViewCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
-        return collectionView
+    private let footballMatchesTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.showsVerticalScrollIndicator = false
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
+        return tableView
     }()
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -62,8 +62,8 @@ final class MainViewController: UIViewController {
             make.top.equalToSuperview().offset(44)
             make.horizontalEdges.equalToSuperview().inset(16)
         }
-        view.addSubview(footballMatchesCollectionView)
-        footballMatchesCollectionView.snp.makeConstraints { make in
+        view.addSubview(footballMatchesTableView)
+        footballMatchesTableView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.bottom.equalToSuperview()
@@ -72,40 +72,43 @@ final class MainViewController: UIViewController {
     }
     
     private func setupDelegates() {
-        footballMatchesCollectionView.delegate = self
-        footballMatchesCollectionView.dataSource = self
+        footballMatchesTableView.delegate = self
+        footballMatchesTableView.dataSource = self
     }
 }
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mockMatchData.count
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? MatchCollectionViewCell else { return UICollectionViewCell() }
-        cell.setData(mockMatchData[indexPath.row])
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as? MatchTableViewCell else { return UITableViewCell() }
+        cell.setData(mockMatchData[indexPath.section])
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailMatchViewController(matchData: mockMatchData[indexPath.row])
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailMatchViewController(matchData: mockMatchData[indexPath.section])
         vc.modalTransitionStyle = .flipHorizontal
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cell = MatchCollectionViewCell(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: 0))
-        cell.setData(mockMatchData[indexPath.row])
-        
-        let size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        return CGSize(width: collectionView.bounds.width, height: size.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 16
     }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.clear
+        return footerView
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return mockMatchData.count
+    }
+   
 }
 //MARK: - Constants
 extension MainViewController {

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class MatchCollectionViewCell: UICollectionViewCell {
+final class MatchTableViewCell: UITableViewCell {
     //MARK: UI elements
     private let horizontalStackView: UIStackView = {
         let stack = UIStackView()
@@ -57,7 +57,7 @@ final class MatchCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.font = GlobalConstants.Fonts.medium16
         return label
     }()
@@ -65,7 +65,7 @@ final class MatchCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.font = GlobalConstants.Fonts.medium16
         return label
@@ -91,8 +91,8 @@ final class MatchCollectionViewCell: UICollectionViewCell {
     private let ellipseImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.ellipse))
     private let arrowImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.rightArrow))
     //MARK: Initialization
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
         defaultConfigurations()
     }
@@ -100,6 +100,7 @@ final class MatchCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         return nil
     }
+
     //MARK: Methods
     func setData(_ data: MatchData) {
         firstTeamImageView.image = UIImage(named: data.firstTeamImage)
@@ -140,7 +141,7 @@ final class MatchCollectionViewCell: UICollectionViewCell {
         }
         contentView.addSubview(timeLabel)
         timeLabel.snp.makeConstraints { make in
-            make.top.equalTo(horizontalStackView.snp.bottom)
+            make.top.equalTo(horizontalStackView.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(24)
             make.bottom.equalToSuperview().inset(12)
         }
@@ -156,6 +157,7 @@ final class MatchCollectionViewCell: UICollectionViewCell {
     }
     
     private func defaultConfigurations() {
+        self.selectionStyle = .none
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 20
         self.layer.borderColor = GlobalConstants.Colors.border

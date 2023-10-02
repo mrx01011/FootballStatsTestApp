@@ -21,7 +21,7 @@ final class DetailMatchViewController: UIViewController {
                            H2HData(date: "23.09", firstTeamImage: "ChelseaLogo", firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: "ChelseaLogo", secondTeam: "Harbor City FC", secondTeamScore: "4")]
     private var state: TypeActivity = .events {
         didSet {
-            infoCollectionView.reloadData()
+            infoTableView.reloadData()
         }
     }
     //MARK: UI elements
@@ -97,7 +97,6 @@ final class DetailMatchViewController: UIViewController {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
-        label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.font = GlobalConstants.Fonts.medium16
         return label
@@ -107,7 +106,6 @@ final class DetailMatchViewController: UIViewController {
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
         label.font = GlobalConstants.Fonts.medium16
         return label
     }()
@@ -160,15 +158,15 @@ final class DetailMatchViewController: UIViewController {
         button.backgroundColor = GlobalConstants.Colors.greenTransparent
         return button
     }()
-    private let infoCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = .clear
-        collectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: "EventsCell")
-        collectionView.register(h2hCollectionViewCell.self, forCellWithReuseIdentifier: "H2HCell")
-        return collectionView
+    private let infoTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.showsVerticalScrollIndicator = false
+        tableView.backgroundColor = .clear
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorStyle = .none
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: Constants.eventCellIdentifier)
+        tableView.register(h2hTableViewCell.self, forCellReuseIdentifier: Constants.h2hCellIdentifier)
+        return tableView
     }()
     lazy private var activityButtons = [eventsButton, h2hButton]
     //MARK: Initialization
@@ -223,8 +221,8 @@ final class DetailMatchViewController: UIViewController {
     }
     
     private func setupDelegates() {
-        infoCollectionView.delegate = self
-        infoCollectionView.dataSource = self
+        infoTableView.delegate = self
+        infoTableView.dataSource = self
     }
     
     private func setupUI() {
@@ -247,7 +245,6 @@ final class DetailMatchViewController: UIViewController {
         containerView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(90)
             make.horizontalEdges.equalToSuperview().inset(16)
-            make.height.equalTo(164)
         }
         containerView.addSubview(leagueLabel)
         leagueLabel.snp.makeConstraints { make in
@@ -270,12 +267,12 @@ final class DetailMatchViewController: UIViewController {
         
         containerView.addSubview(horizontalStackView)
         horizontalStackView.snp.makeConstraints { make in
-            make.top.equalTo(leagueLabel)
+            make.top.equalTo(leagueLabel).offset(16)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         containerView.addSubview(timeLabel)
         timeLabel.snp.makeConstraints { make in
-            make.top.equalTo(horizontalStackView.snp.bottom)
+            make.top.equalTo(horizontalStackView.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(24)
             make.bottom.equalToSuperview().inset(12)
         }
@@ -294,8 +291,8 @@ final class DetailMatchViewController: UIViewController {
             make.leading.equalTo(eventsButton.snp.trailing).offset(10)
             make.centerY.equalTo(eventsButton)
         }
-        view.addSubview(infoCollectionView)
-        infoCollectionView.snp.makeConstraints { make in
+        view.addSubview(infoTableView)
+        infoTableView.snp.makeConstraints { make in
             make.top.equalTo(eventsButton.snp.bottom).offset(22)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.bottom.equalToSuperview()
@@ -327,54 +324,55 @@ final class DetailMatchViewController: UIViewController {
         self.dismiss(animated: true)
     }
 }
-
-extension DetailMatchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//MARK: UITableViewDelegate, UITableViewDataSource
+extension DetailMatchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         switch state {
         case .events:
             return mockEvents.count
         case .h2h:
             return mockH2H.count
         }
-        
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch state {
         case .events:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventsCell", for: indexPath) as? EventCollectionViewCell else { return UICollectionViewCell() }
-            cell.setData(mockEvents[indexPath.row])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventCellIdentifier, for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
+            cell.setData(mockEvents[indexPath.section])
             return cell
         case .h2h:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "H2HCell", for: indexPath) as? h2hCollectionViewCell else { return UICollectionViewCell() }
-            cell.setData(mockH2H[indexPath.row])
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.h2hCellIdentifier, for: indexPath) as? h2hTableViewCell else { return UITableViewCell() }
+            cell.setData(mockH2H[indexPath.section])
             return cell
         }
-        
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch state {
-        case .events:
-            let cell = EventCollectionViewCell(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: 0))
-            cell.setData(mockEvents[indexPath.row])
-            
-            let size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-            return CGSize(width: collectionView.bounds.width, height: size.height)
-        case .h2h:
-            return CGSize(width: collectionView.bounds.width, height: 76)
-        }
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 16
     }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.clear
+        return footerView
+    }
 }
-
+//MARK: - State
 extension DetailMatchViewController {
     enum TypeActivity: Int {
         case events
         case h2h
+    }
+}
+//MARK:
+extension DetailMatchViewController {
+    enum Constants {
+        static let eventCellIdentifier = "EventsCell"
+        static let h2hCellIdentifier = "H2HCell"
     }
 }

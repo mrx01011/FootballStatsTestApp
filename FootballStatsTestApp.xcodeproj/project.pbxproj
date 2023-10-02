@@ -22,13 +22,13 @@
 		FA12EBD92AC5F9F8004EB3ED /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBD62AC5F9F8004EB3ED /* SFProText-Regular.ttf */; };
 		FA12EBDC2AC62A34004EB3ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBDB2AC62A34004EB3ED /* MainViewController.swift */; };
 		FA12EBDE2AC62F22004EB3ED /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBDD2AC62F22004EB3ED /* SFProDisplay-Black.ttf */; };
-		FA12EBE12AC632CA004EB3ED /* MatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBE02AC632CA004EB3ED /* MatchCollectionViewCell.swift */; };
+		FA12EBE12AC632CA004EB3ED /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBE02AC632CA004EB3ED /* MatchTableViewCell.swift */; };
 		FA12EBE32AC63751004EB3ED /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBE22AC63751004EB3ED /* SFProDisplay-Medium.ttf */; };
 		FA12EBE52AC6392C004EB3ED /* SFProDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA12EBE42AC6392C004EB3ED /* SFProDisplay-Heavy.ttf */; };
 		FA12EBEA2AC745B4004EB3ED /* DetailMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBE92AC745B4004EB3ED /* DetailMatchViewController.swift */; };
-		FA12EBEC2AC880ED004EB3ED /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBEB2AC880ED004EB3ED /* EventCollectionViewCell.swift */; };
+		FA12EBEC2AC880ED004EB3ED /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBEB2AC880ED004EB3ED /* EventTableViewCell.swift */; };
 		FA12EBEF2AC89B29004EB3ED /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EBEE2AC89B29004EB3ED /* EventData.swift */; };
-		FA12EC2D2AC9534D004EB3ED /* h2hCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EC2C2AC9534D004EB3ED /* h2hCollectionViewCell.swift */; };
+		FA12EC2D2AC9534D004EB3ED /* h2hTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EC2C2AC9534D004EB3ED /* h2hTableViewCell.swift */; };
 		FA12EC2F2AC97377004EB3ED /* H2HData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EC2E2AC97377004EB3ED /* H2HData.swift */; };
 		FA2590672AC9C44D00FD9178 /* MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2590662AC9C44D00FD9178 /* MatchData.swift */; };
 		FA25906A2ACB1C6B00FD9178 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2590692ACB1C6B00FD9178 /* Global.swift */; };
@@ -70,13 +70,13 @@
 		FA12EBD62AC5F9F8004EB3ED /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		FA12EBDB2AC62A34004EB3ED /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA12EBDD2AC62F22004EB3ED /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
-		FA12EBE02AC632CA004EB3ED /* MatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA12EBE02AC632CA004EB3ED /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		FA12EBE22AC63751004EB3ED /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		FA12EBE42AC6392C004EB3ED /* SFProDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Heavy.ttf"; sourceTree = "<group>"; };
 		FA12EBE92AC745B4004EB3ED /* DetailMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMatchViewController.swift; sourceTree = "<group>"; };
-		FA12EBEB2AC880ED004EB3ED /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA12EBEB2AC880ED004EB3ED /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		FA12EBEE2AC89B29004EB3ED /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
-		FA12EC2C2AC9534D004EB3ED /* h2hCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = h2hCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA12EC2C2AC9534D004EB3ED /* h2hTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = h2hTableViewCell.swift; sourceTree = "<group>"; };
 		FA12EC2E2AC97377004EB3ED /* H2HData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H2HData.swift; sourceTree = "<group>"; };
 		FA2590662AC9C44D00FD9178 /* MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchData.swift; sourceTree = "<group>"; };
 		FA2590692ACB1C6B00FD9178 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -205,9 +205,9 @@
 		FA12EBDF2AC632A8004EB3ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				FA12EBE02AC632CA004EB3ED /* MatchCollectionViewCell.swift */,
-				FA12EBEB2AC880ED004EB3ED /* EventCollectionViewCell.swift */,
-				FA12EC2C2AC9534D004EB3ED /* h2hCollectionViewCell.swift */,
+				FA12EBEB2AC880ED004EB3ED /* EventTableViewCell.swift */,
+				FA12EBE02AC632CA004EB3ED /* MatchTableViewCell.swift */,
+				FA12EC2C2AC9534D004EB3ED /* h2hTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -373,15 +373,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA12EBEA2AC745B4004EB3ED /* DetailMatchViewController.swift in Sources */,
-				FA12EBEC2AC880ED004EB3ED /* EventCollectionViewCell.swift in Sources */,
+				FA12EBEC2AC880ED004EB3ED /* EventTableViewCell.swift in Sources */,
 				FA12EBEF2AC89B29004EB3ED /* EventData.swift in Sources */,
 				FA12EBD12AC5F651004EB3ED /* OnboardingViewController.swift in Sources */,
 				FA12EB9F2AC5B18C004EB3ED /* PreloadViewController.swift in Sources */,
 				FA25906A2ACB1C6B00FD9178 /* Global.swift in Sources */,
 				FA12EB9B2AC5B18C004EB3ED /* AppDelegate.swift in Sources */,
 				FA12EB9D2AC5B18C004EB3ED /* SceneDelegate.swift in Sources */,
-				FA12EC2D2AC9534D004EB3ED /* h2hCollectionViewCell.swift in Sources */,
-				FA12EBE12AC632CA004EB3ED /* MatchCollectionViewCell.swift in Sources */,
+				FA12EC2D2AC9534D004EB3ED /* h2hTableViewCell.swift in Sources */,
+				FA12EBE12AC632CA004EB3ED /* MatchTableViewCell.swift in Sources */,
 				FA2590672AC9C44D00FD9178 /* MatchData.swift in Sources */,
 				FA12EC2F2AC97377004EB3ED /* H2HData.swift in Sources */,
 				FA12EBDC2AC62A34004EB3ED /* MainViewController.swift in Sources */,

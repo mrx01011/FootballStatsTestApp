@@ -10,7 +10,6 @@ import SnapKit
 
 final class PreloadViewController: UIViewController {
     private var slides = [OnboardingViewController]()
-    //MARK: UI elements
     let firstVC = OnboardingViewController(titleText: "All football events in one place",
                                            subtitleText: "Stay up to date with the latest results of your favorite matches.",
                                            backgroundImage: UIImage(named: GlobalConstants.Images.firstOnboardingBackground))
@@ -20,6 +19,7 @@ final class PreloadViewController: UIViewController {
     let thirdVC = OnboardingViewController(titleText: "Search football\nevents by map",
                                            subtitleText: "Stay up to date with the latest\nresults of your favorite matches.",
                                            backgroundImage: UIImage(named: GlobalConstants.Images.thirdOnboardingBackground))
+    //MARK: UI elements
     private let backgroundImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.preloaderBackground))
     private let loadingSpiralImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.loading))
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
