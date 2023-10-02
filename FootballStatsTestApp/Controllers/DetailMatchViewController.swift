@@ -15,8 +15,8 @@ final class DetailMatchViewController: UIViewController {
                               EventData(imageName: "switch", event: "REPLACE", minute: "72'", firstPlayer: "Jaylon Carder", secondPlayer: "Scott Herwitz", team: 0),
                               EventData(imageName: "yellowCard", event: "YELLOW CARD", minute: "68'", firstPlayer: "Scott Herwitz", secondPlayer: nil, team: 1),
                               EventData(imageName: "yellowCard", event: "YELLOW CARD", minute: "66'", firstPlayer: "Corey Westervelt", secondPlayer: nil, team: 0)]
-    private let mockH2H = [H2HData(date: "23.09", firstTeamImage: "ChelseaLogo", firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: "ChelseaLogo", secondTeam: "Harbor City FC", secondTeamScore: "4"),
-                           H2HData(date: "23.09", firstTeamImage: "ChelseaLogo", firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: "ChelseaLogo", secondTeam: "Harbor City FC", secondTeamScore: "4"),
+    private let mockH2H = [H2HData(date: "23.09", firstTeamImage: GlobalConstants.Images.chelseaLogo, firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: GlobalConstants.Images.chelseaLogo, secondTeam: "Harbor City FC", secondTeamScore: "4"),
+                           H2HData(date: "23.09", firstTeamImage: GlobalConstants.Images.chelseaLogo, firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: "ChelseaLogo", secondTeam: "Harbor City FC", secondTeamScore: "4"),
                            H2HData(date: "23.09", firstTeamImage: "ChelseaLogo", firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: "ChelseaLogo", secondTeam: "Harbor City FC", secondTeamScore: "4"),
                            H2HData(date: "23.09", firstTeamImage: "ChelseaLogo", firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: "ChelseaLogo", secondTeam: "Harbor City FC", secondTeamScore: "4")]
     private var state: TypeActivity = .events {
@@ -28,9 +28,9 @@ final class DetailMatchViewController: UIViewController {
     private let headerImageView = UIImageView(image: UIImage(named: "DetailVCHeader"))
     private let backButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "arrow-left"), for: .normal)
+        button.setImage(UIImage(named: GlobalConstants.Images.leftArrow), for: .normal)
         button.layer.cornerRadius = 20
-        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)
+        button.backgroundColor = GlobalConstants.Colors.whiteTransparent02
         return button
     }()
     private let moreButton: UIButton = {
@@ -40,15 +40,15 @@ final class DetailMatchViewController: UIViewController {
     }()
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.184, green: 0.184, blue: 0.184, alpha: 1)
+        view.backgroundColor = GlobalConstants.Colors.dark
         view.layer.cornerRadius = 20
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1).cgColor
+        view.layer.borderColor = GlobalConstants.Colors.border
         return view
     }()
     private let leagueLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProText-Regular", size: 12)
+        label.font = GlobalConstants.Fonts.regular12
         return label
     }()
     private let horizontalStackView: UIStackView = {
@@ -84,60 +84,55 @@ final class DetailMatchViewController: UIViewController {
         return stack
     }()
     private let firstTeamImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "ChelseaLogo"))
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     private let secondTeamImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "ChelseaLogo"))
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     private let firstTeamLabel: UILabel = {
         let label = UILabel()
-        label.text = "Royal Phoenix FC"
         label.textColor = .white
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.font = GlobalConstants.Fonts.medium16
         return label
     }()
     private let secondTeamLabel: UILabel = {
         let label = UILabel()
-        label.text = "Royal Phoenix FC"
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.font = GlobalConstants.Fonts.medium16
         return label
     }()
     private let scoreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont(name: "SFProDisplay-Heavy", size: 32)
+        label.font = GlobalConstants.Fonts.heavy32
         return label
     }()
     private let timeFromStartLabel: UILabel = {
         let label = UILabel()
-        label.text = "59'"
-        label.textColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1)
-        label.font = UIFont(name: "SFProDisplay-Bold", size: 17)
+        label.textColor = GlobalConstants.Colors.green
+        label.font = GlobalConstants.Fonts.bold17
         return label
     }()
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "18:00"
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-        label.font = UIFont(name: "SFProText-Regular", size: 12)
+        label.textColor = GlobalConstants.Colors.whiteTransparent05
+        label.font = GlobalConstants.Fonts.regular12
         return label
     }()
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "29.09"
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-        label.font = UIFont(name: "SFProText-Regular", size: 12)
+        label.textColor = GlobalConstants.Colors.whiteTransparent05
+        label.font = GlobalConstants.Fonts.regular12
         return label
     }()
     private let eventsButton: UIButton = {
@@ -148,9 +143,9 @@ final class DetailMatchViewController: UIViewController {
         button.layer.cornerRadius = 16
         button.isHighlighted = false
         button.configuration = configuration
-        button.titleLabel?.font = UIFont(name: "SFProDisplay-Medium", size: 17)
+        button.titleLabel?.font = GlobalConstants.Fonts.medium17
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1)
+        button.backgroundColor = GlobalConstants.Colors.green
         return button
     }()
     private let h2hButton: UIButton = {
@@ -160,9 +155,9 @@ final class DetailMatchViewController: UIViewController {
         button.layer.cornerRadius = 16
         button.configuration = configuration
         button.setTitle("H2H", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SFProDisplay-Medium", size: 17)
-        button.setTitleColor(UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 0.1)
+        button.titleLabel?.font = GlobalConstants.Fonts.medium17
+        button.setTitleColor(GlobalConstants.Colors.green, for: .normal)
+        button.backgroundColor = GlobalConstants.Colors.greenTransparent
         return button
     }()
     private let infoCollectionView: UICollectionView = {
@@ -184,7 +179,7 @@ final class DetailMatchViewController: UIViewController {
         firstTeamLabel.text = matchData.firstTeamName
         secondTeamLabel.text = matchData.secondTeamName
         secondTeamImageView.image = UIImage(named: matchData.secondTeamImage)
-        scoreLabel.attributedText = configureScoreLabelTextColor(labelText: matchData.score) 
+        scoreLabel.attributedText = configureScoreLabelTextColor(labelText: matchData.score)
         timeFromStartLabel.text = matchData.minuteMatch
         timeLabel.text = matchData.time
         dateLabel.text = matchData.date
@@ -203,21 +198,21 @@ final class DetailMatchViewController: UIViewController {
     }
     //MARK: Methods
     private func defaultConfigurations() {
-        view.backgroundColor = UIColor(red: 0.141, green: 0.141, blue: 0.141, alpha: 1)
+        view.backgroundColor = GlobalConstants.Colors.black
     }
     
     private func configureScoreLabelTextColor(labelText: String) -> NSMutableAttributedString {
         let attributedText = NSMutableAttributedString(string: labelText)
-        attributedText.addAttribute(.foregroundColor, value: UIColor(red: 1, green: 1, blue: 1, alpha: 0.5), range: NSRange(location: 0, length: 1))
- 
+        attributedText.addAttribute(.foregroundColor, value: GlobalConstants.Colors.whiteTransparent05, range: NSRange(location: 0, length: 1))
+        
         return attributedText
     }
     
     private func configureLeagueLabelTextColor(labelText: String) -> NSMutableAttributedString {
         let newLabelText = "League: " + labelText
         let attributedText = NSMutableAttributedString(string: newLabelText)
-        attributedText.addAttribute(.foregroundColor, value: UIColor(red: 1, green: 1, blue: 1, alpha: 0.5), range: NSRange(location: 0, length: 7))
-        attributedText.addAttribute(.foregroundColor, value: UIColor(red: 0.216, green: 0.654, blue: 0.207, alpha: 1), range: NSRange(location: 6, length: newLabelText.count - 6))
+        attributedText.addAttribute(.foregroundColor, value: GlobalConstants.Colors.whiteTransparent05, range: NSRange(location: 0, length: 7))
+        attributedText.addAttribute(.foregroundColor, value: GlobalConstants.Colors.green, range: NSRange(location: 6, length: newLabelText.count - 6))
         return attributedText
     }
     
@@ -309,7 +304,7 @@ final class DetailMatchViewController: UIViewController {
     
     private func getSelectedActivity() -> TypeActivity {
         for (index, button) in activityButtons.enumerated() {
-            if button.backgroundColor == UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1) {
+            if button.backgroundColor == GlobalConstants.Colors.green {
                 return TypeActivity(rawValue: index) ?? .events
             }
         }
@@ -318,11 +313,11 @@ final class DetailMatchViewController: UIViewController {
     
     @objc private func activitySelected(_ sender: UIButton) {
         activityButtons.forEach({
-            $0.titleLabel?.textColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1)
-            $0.backgroundColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 0.1)
+            $0.titleLabel?.textColor = GlobalConstants.Colors.green
+            $0.backgroundColor = GlobalConstants.Colors.greenTransparent
         })
         
-        sender.backgroundColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1)
+        sender.backgroundColor = GlobalConstants.Colors.green
         sender.setTitleColor(.white, for: .normal)
         
         state = getSelectedActivity()
@@ -348,22 +343,11 @@ extension DetailMatchViewController: UICollectionViewDelegate, UICollectionViewD
         switch state {
         case .events:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventsCell", for: indexPath) as? EventCollectionViewCell else { return UICollectionViewCell() }
-            cell.setData(eventImageName: mockEvents[indexPath.row].imageName,
-                         event: mockEvents[indexPath.row].event,
-                         eventMinute: mockEvents[indexPath.row].minute,
-                         firstPlayer: mockEvents[indexPath.row].firstPlayer,
-                         secondPlayer: mockEvents[indexPath.row].secondPlayer,
-                         team: mockEvents[indexPath.row].team)
+            cell.setData(mockEvents[indexPath.row])
             return cell
         case .h2h:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "H2HCell", for: indexPath) as? h2hCollectionViewCell else { return UICollectionViewCell() }
-            cell.setData(date: mockH2H[indexPath.row].date,
-                         firstTeamImage: mockH2H[indexPath.row].firstTeamImage,
-                         firstTeam: mockH2H[indexPath.row].firstTeam,
-                         firstTeamScore: mockH2H[indexPath.row].firstTeamScore,
-                         secondTeamImage: mockH2H[indexPath.row].secondTeamImage,
-                         secondTeam: mockH2H[indexPath.row].secondTeam,
-                         secondTeamScore: mockH2H[indexPath.row].secondTeamScore)
+            cell.setData(mockH2H[indexPath.row])
             return cell
         }
         
@@ -372,15 +356,8 @@ extension DetailMatchViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch state {
         case .events:
-            let eventData = mockEvents[indexPath.row]
-            
             let cell = EventCollectionViewCell(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: 0))
-            cell.setData(eventImageName: eventData.imageName,
-                         event: eventData.event,
-                         eventMinute: eventData.minute,
-                         firstPlayer: eventData.firstPlayer,
-                         secondPlayer: eventData.secondPlayer,
-                         team: eventData.team)
+            cell.setData(mockEvents[indexPath.row])
             
             let size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
             return CGSize(width: collectionView.bounds.width, height: size.height)

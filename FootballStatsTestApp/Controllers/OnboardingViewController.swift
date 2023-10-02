@@ -16,41 +16,39 @@ protocol OnboardingViewControlerDelegate: AnyObject {
 final class OnboardingViewController: UIViewController {
     weak var delegate: OnboardingViewControlerDelegate?
     //MARK: UI elements
-    private let backgroundImageView = UIImageView(image: UIImage(named: "FirstOnboarding"))
+    private let backgroundImageView = UIImageView()
     private let mainInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "All football events\nin one place"
-        label.font = UIFont(name: "SFProDisplay-Bold", size: 34)
+        label.font = GlobalConstants.Fonts.bold34
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.textColor = UIColor(red: 0.169, green: 0.542, blue: 0.391, alpha: 1)
+        label.textColor = GlobalConstants.Colors.onboardingGreen
         return label
     }()
     private let secondaryInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Stay up to date with the latest results of\nyour favorite matches."
-        label.font = UIFont(name: "SFProText-Regular", size: 16)
+        label.font = GlobalConstants.Fonts.regular16
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.textColor = UIColor(red: 0.141, green: 0.141, blue: 0.141, alpha: 0.5)
+        label.textColor = GlobalConstants.Colors.blackTransparent
         return label
     }()
     private let nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("Next", for: .normal)
-        button.backgroundColor = UIColor(red: 0.141, green: 0.141, blue: 0.141, alpha: 1)
-        button.titleLabel?.font = UIFont(name: "SFProDisplay-Semibold", size: 17)
+        button.backgroundColor = GlobalConstants.Colors.black
+        button.titleLabel?.font = GlobalConstants.Fonts.semibold17
         button.layer.cornerRadius = 20
         return button
     }()
     private let skipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SFProDisplay-Semibold", size: 17)
+        button.titleLabel?.font = GlobalConstants.Fonts.semibold17
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 20
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(red: 0.141, green: 0.141, blue: 0.141, alpha: 1).cgColor
+        button.layer.borderColor = GlobalConstants.Colors.black.cgColor
         return button
     }()
     //MARK: Initialization
@@ -69,9 +67,6 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         addTargets()
-        nextButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(nextButtonTapped)))
-        skipButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(skipButtonTapped)))
-
     }
     //MARK: Methods
     private func setupUI() {

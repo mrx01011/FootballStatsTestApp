@@ -9,41 +9,37 @@ import UIKit
 import SnapKit
 
 final class h2hCollectionViewCell: UICollectionViewCell {
+    //MARK: UI elements
     private let firstTeamLabel: UILabel = {
         let label = UILabel()
-        label.text = "Royal Phoenix FC"
         label.textColor = .white
-        label.font = UIFont(name: "SFProText-Regular", size: 14)
+        label.font = GlobalConstants.Fonts.regular14
         return label
     }()
     private let secondTeamLabel: UILabel = {
         let label = UILabel()
-        label.text = "Royal Phoenix FC"
         label.textColor = .white
-        label.font = UIFont(name: "SFProText-Regular", size: 14)
+        label.font = GlobalConstants.Fonts.regular14
         return label
     }()
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "23.09"
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 14)
+        label.textColor = GlobalConstants.Colors.whiteTransparent05
+        label.font = GlobalConstants.Fonts.medium14
         return label
     }()
-    private let firstTeamImageView = UIImageView(image: UIImage(named: "ChelseaLogo"))
-    private let secondTeamImageView = UIImageView(image: UIImage(named: "ChelseaLogo"))
+    private let firstTeamImageView = UIImageView()
+    private let secondTeamImageView = UIImageView()
     private let firstTeamScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "3"
         label.textColor = .white
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 14)
+        label.font = GlobalConstants.Fonts.medium14
         return label
     }()
     private let secondTeamScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "4"
         label.textColor = .white
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 14)
+        label.font = GlobalConstants.Fonts.medium14
         return label
     }()
     //MARK: Initialization
@@ -57,21 +53,21 @@ final class h2hCollectionViewCell: UICollectionViewCell {
         return nil
     }
     //MARK: Methods
-    func setData(date: String, firstTeamImage: String, firstTeam: String, firstTeamScore: String, secondTeamImage: String, secondTeam: String, secondTeamScore: String) {
-        dateLabel.text = date
-        firstTeamImageView.image = UIImage(named: firstTeamImage)
-        firstTeamLabel.text = firstTeam
-        firstTeamScoreLabel.text = firstTeamScore
-        secondTeamImageView.image = UIImage(named: secondTeamImage)
-        secondTeamLabel.text = secondTeam
-        secondTeamScoreLabel.text = secondTeamScore
+    func setData(_ data: H2HData) {
+        dateLabel.text = data.date
+        firstTeamImageView.image = UIImage(named: data.firstTeamImage)
+        firstTeamLabel.text = data.firstTeam
+        firstTeamScoreLabel.text = data.firstTeamScore
+        secondTeamImageView.image = UIImage(named: data.secondTeamImage)
+        secondTeamLabel.text = data.secondTeam
+        secondTeamScoreLabel.text = data.secondTeamScore
     }
     
     private func defaultConfigurations() {
-        backgroundColor = UIColor(red: 0.184, green: 0.184, blue: 0.184, alpha: 1)
+        backgroundColor = GlobalConstants.Colors.dark
         layer.cornerRadius = 12
         layer.borderWidth = 1
-        layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1).cgColor
+        layer.borderColor = GlobalConstants.Colors.border
     }
     
     private func setupUI() {

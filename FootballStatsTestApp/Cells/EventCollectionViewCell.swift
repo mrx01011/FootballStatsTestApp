@@ -16,19 +16,17 @@ final class EventCollectionViewCell: UICollectionViewCell {
     private var minuteLeadingConstraint: Constraint?
     private var minuteTrailingConstraint: Constraint?
     //MARK: UIElements
-    private let eventImageView = UIImageView(image: UIImage(named: "ball"))
+    private let eventImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.ball))
     private let eventTextLabel: UILabel = {
         let label = UILabel()
-        label.text = "GOAL!!!"
-        label.textColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1)
-        label.font = UIFont(name: "SFProDisplay-Bold", size: 12)
+        label.textColor = GlobalConstants.Colors.green
+        label.font = GlobalConstants.Fonts.bold12
         return label
     }()
     private let eventMinuteLabel: UILabel = {
         let label = UILabel()
-        label.text = "89'"
         label.textColor = .white
-        label.font = UIFont(name: "SFProDisplay-Bold", size: 12)
+        label.font = GlobalConstants.Fonts.bold12
         return label
     }()
     private let outerStackView: UIStackView = {
@@ -57,31 +55,29 @@ final class EventCollectionViewCell: UICollectionViewCell {
     }()
     private let firstPlayerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Vladyslav Nhuien"
         label.textColor = .white
-        label.font = UIFont(name: "SFProText-Regular", size: 14)
+        label.font = GlobalConstants.Fonts.regular14
         return label
     }()
     private let secondPlayerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Vladyslav Nhuien"
         label.textColor = .white
-        label.font = UIFont(name: "SFProText-Regular", size: 14)
+        label.font = GlobalConstants.Fonts.regular14
         return label
     }()
     private let replaceInLabel: UILabel = {
         let label = UILabel()
         label.text = "IN"
         label.textAlignment = .left
-        label.textColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1)
-        label.font = UIFont(name: "SFProText-Regular", size: 14)
+        label.textColor = GlobalConstants.Colors.green
+        label.font = GlobalConstants.Fonts.regular14
         return label
     }()
     private let replaceOutLabel: UILabel = {
         let label = UILabel()
         label.text = "OUT"
-        label.textColor = UIColor(red: 0.93, green: 0.21, blue: 0.21, alpha: 1)
-        label.font = UIFont(name: "SFProText-Regular", size: 14)
+        label.textColor = GlobalConstants.Colors.red
+        label.font = GlobalConstants.Fonts.regular14
         return label
     }()
     //MARK: Initialization
@@ -95,13 +91,13 @@ final class EventCollectionViewCell: UICollectionViewCell {
         return nil
     }
     //MARK: Methods
-    func setData(eventImageName: String, event: String, eventMinute: String, firstPlayer: String, secondPlayer: String?, team: Int) {
-        eventImageView.image = UIImage(named: eventImageName)
-        eventTextLabel.text = event
-        eventMinuteLabel.text = eventMinute
-        firstPlayerLabel.text = firstPlayer
-        updateConstraints(with: Team(rawValue: team) ?? .first)
-        if let secondPlayer = secondPlayer {
+    func setData(_ data: EventData) {
+        eventImageView.image = UIImage(named: data.imageName)
+        eventTextLabel.text = data.event
+        eventMinuteLabel.text = data.minute
+        firstPlayerLabel.text = data.firstPlayer
+        updateConstraints(with: Team(rawValue: data.team) ?? .first)
+        if let secondPlayer = data.secondPlayer {
             secondPlayerLabel.text = secondPlayer
         } else {
             secondPlayerStackView.removeArrangedSubview(replaceInLabel)
@@ -172,10 +168,10 @@ final class EventCollectionViewCell: UICollectionViewCell {
     }
     
     private func defaultConfigurations() {
-        backgroundColor = UIColor(red: 0.184, green: 0.184, blue: 0.184, alpha: 1)
+        backgroundColor = GlobalConstants.Colors.dark
         layer.cornerRadius = 12
         layer.borderWidth = 1
-        layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1).cgColor
+        layer.borderColor = GlobalConstants.Colors.border
     }
 }
 //MARK: - State

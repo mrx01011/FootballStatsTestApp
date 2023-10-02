@@ -13,15 +13,15 @@ final class PreloadViewController: UIViewController {
     //MARK: UI elements
     let firstVC = OnboardingViewController(titleText: "All football events in one place",
                                            subtitleText: "Stay up to date with the latest results of your favorite matches.",
-                                           backgroundImage: UIImage(named: "FirstOnboarding"))
+                                           backgroundImage: UIImage(named: GlobalConstants.Images.firstOnboardingBackground))
     let secondVC = OnboardingViewController(titleText: "Learn more about your favorite team",
-                                           subtitleText: "Stay up to date with the latest results of your favorite matches.",
-                                           backgroundImage: UIImage(named: "SecondOnboarding"))
+                                            subtitleText: "Stay up to date with the latest results of your favorite matches.",
+                                            backgroundImage: UIImage(named: GlobalConstants.Images.secondOnboardingBackground))
     let thirdVC = OnboardingViewController(titleText: "Search football\nevents by map",
                                            subtitleText: "Stay up to date with the latest\nresults of your favorite matches.",
-                                           backgroundImage: UIImage(named: "ThirdOnboarding"))
-    private let backgroundImageView = UIImageView(image: UIImage(named: "Preloader"))
-    private let loadingSpiralImageView = UIImageView(image: UIImage(named: "LoadingSpiral"))
+                                           backgroundImage: UIImage(named: GlobalConstants.Images.thirdOnboardingBackground))
+    private let backgroundImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.preloaderBackground))
+    private let loadingSpiralImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.loading))
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -35,7 +35,6 @@ final class PreloadViewController: UIViewController {
             self.present(self.pageViewController, animated: true)
         }
     }
-    
     //MARK: Methods
     private func setupUI() {
         view.addSubview(backgroundImageView)

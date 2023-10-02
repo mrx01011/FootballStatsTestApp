@@ -43,12 +43,12 @@ final class MatchCollectionViewCell: UICollectionViewCell {
         return stack
     }()
     private let firstTeamImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "ChelseaLogo"))
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     private let secondTeamImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "ChelseaLogo"))
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -58,7 +58,7 @@ final class MatchCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 2
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.font = GlobalConstants.Fonts.medium16
         return label
     }()
     private let secondTeamLabel: UILabel = {
@@ -67,29 +67,29 @@ final class MatchCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.font = GlobalConstants.Fonts.medium16
         return label
     }()
     private let scoreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont(name: "SFProDisplay-Heavy", size: 32)
+        label.font = GlobalConstants.Fonts.heavy32
         return label
     }()
     private let timeFromStartLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(red: 0.211, green: 0.667, blue: 0.482, alpha: 1)
-        label.font = UIFont(name: "SFProDisplay-Bold", size: 17)
+        label.textColor = GlobalConstants.Colors.green
+        label.font = GlobalConstants.Fonts.bold17
         return label
     }()
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-        label.font = UIFont(name: "SFProText-Regular", size: 12)
+        label.textColor = GlobalConstants.Colors.whiteTransparent05
+        label.font = GlobalConstants.Fonts.regular12
         return label
     }()
-    private let ellipseImageView = UIImageView(image: UIImage(named: "Ellipse"))
-    private let arrowImageView = UIImageView(image: UIImage(named: "arrow-right"))
+    private let ellipseImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.ellipse))
+    private let arrowImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.rightArrow))
     //MARK: Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -113,7 +113,7 @@ final class MatchCollectionViewCell: UICollectionViewCell {
     
     private func configureScoreLabelTextColor(labelText: String) -> NSMutableAttributedString {
         let attributedText = NSMutableAttributedString(string: labelText)
-        attributedText.addAttribute(.foregroundColor, value: UIColor(red: 1, green: 1, blue: 1, alpha: 0.5), range: NSRange(location: 0, length: 1))
+        attributedText.addAttribute(.foregroundColor, value: GlobalConstants.Colors.whiteTransparent05, range: NSRange(location: 0, length: 1))
         
         return attributedText
     }
@@ -158,8 +158,8 @@ final class MatchCollectionViewCell: UICollectionViewCell {
     private func defaultConfigurations() {
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 20
-        self.layer.borderColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1).cgColor
-        self.backgroundColor = UIColor(red: 0.184, green: 0.184, blue: 0.184, alpha: 1)
+        self.layer.borderColor = GlobalConstants.Colors.border
+        self.backgroundColor = GlobalConstants.Colors.dark
         self.clipsToBounds = true
     }
 }

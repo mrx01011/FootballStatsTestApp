@@ -9,18 +9,18 @@ import UIKit
 import SnapKit
 
 final class MainViewController: UIViewController {
-    let mockMatchData = [MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: "ChelseaLogo", secondTeamImage: "ChelseaLogo", time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
-                         MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: "ChelseaLogo", secondTeamImage: "ChelseaLogo", time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
-                         MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: "ChelseaLogo", secondTeamImage: "ChelseaLogo", time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
-                         MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: "ChelseaLogo", secondTeamImage: "ChelseaLogo", time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09")]
+    private let mockMatchData = [MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
+                         MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
+                         MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09"),
+                         MatchData(score: "1:2", firstTeamName: "Royal Phoenix FC", secondTeamName: "Royal Phoenix FC", firstTeamImage: GlobalConstants.Images.chelseaLogo, secondTeamImage: GlobalConstants.Images.chelseaLogo, time: "18:00", minuteMatch: "59'", league: "London Blitz", date: "29.09")]
     //MARK: UI elements
-    private let headerImageView = UIImageView(image: UIImage(named: "MainVCHeader"))
-    private let pathImageView = UIImageView(image: UIImage(named: "path125"))
+    private let headerImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.mainVCHeader))
+    private let pathImageView = UIImageView(image: UIImage(named: GlobalConstants.Images.headerVector))
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "AER"
         label.textColor = .white
-        label.font = UIFont(name: "SFProDisplay-Black", size: 48)
+        label.font = GlobalConstants.Fonts.black48
         label.textAlignment = .left
         return label
     }()
@@ -42,7 +42,7 @@ final class MainViewController: UIViewController {
     }
     //MARK: Methods
     private func defaultConfigurations() {
-        view.backgroundColor = UIColor(red: 0.141, green: 0.141, blue: 0.141, alpha: 1)
+        view.backgroundColor = GlobalConstants.Colors.black
     }
     
     private func setupUI() {
@@ -96,7 +96,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 150)
+        let cell = MatchCollectionViewCell(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: 0))
+        cell.setData(mockMatchData[indexPath.row])
+        
+        let size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        return CGSize(width: collectionView.bounds.width, height: size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
