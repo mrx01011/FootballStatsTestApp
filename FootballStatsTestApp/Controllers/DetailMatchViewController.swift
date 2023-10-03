@@ -9,12 +9,12 @@ import UIKit
 import SnapKit
 
 final class DetailMatchViewController: UIViewController {
-    private let mockEvents = [EventData(imageName: "yellowCard", event: "YELLOW CARD", minute: "89'", firstPlayer: "Ryan Botosh", secondPlayer: nil, team: 0),
-                              EventData(imageName: "ball", event: "GOAL!!!", minute: "81'", firstPlayer: "Corey Westervelt", secondPlayer: nil, team: 1),
-                              EventData(imageName: "redCard", event: "RED CARD", minute: "76'", firstPlayer: "Jaylon Carder", secondPlayer: nil, team: 0),
-                              EventData(imageName: "switch", event: "REPLACE", minute: "72'", firstPlayer: "Jaylon Carder", secondPlayer: "Scott Herwitz", team: 0),
-                              EventData(imageName: "yellowCard", event: "YELLOW CARD", minute: "68'", firstPlayer: "Scott Herwitz", secondPlayer: nil, team: 1),
-                              EventData(imageName: "yellowCard", event: "YELLOW CARD", minute: "66'", firstPlayer: "Corey Westervelt", secondPlayer: nil, team: 0)]
+    private let mockEvents = [EventData(imageName: "yellowCard", event: "YELLOW CARD", minute: "89❜", firstPlayer: "Ryan Botosh", secondPlayer: nil, team: 0),
+                              EventData(imageName: "ball", event: "GOAL!!!", minute: "81❜", firstPlayer: "Corey Westervelt", secondPlayer: nil, team: 1),
+                              EventData(imageName: "redCard", event: "RED CARD", minute: "76❜", firstPlayer: "Jaylon Carder", secondPlayer: nil, team: 0),
+                              EventData(imageName: "switch", event: "REPLACE", minute: "72❜", firstPlayer: "Jaylon Carder", secondPlayer: "Scott Herwitz", team: 0),
+                              EventData(imageName: "yellowCard", event: "YELLOW CARD", minute: "68❜", firstPlayer: "Scott Herwitz", secondPlayer: nil, team: 1),
+                              EventData(imageName: "yellowCard", event: "YELLOW CARD", minute: "66❜", firstPlayer: "Corey Westervelt", secondPlayer: nil, team: 0)]
     private let mockH2H = [H2HData(date: "23.09", firstTeamImage: GlobalConstants.Images.chelseaLogo, firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: GlobalConstants.Images.chelseaLogo, secondTeam: "Harbor City FC", secondTeamScore: "4"),
                            H2HData(date: "23.09", firstTeamImage: GlobalConstants.Images.chelseaLogo, firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: "ChelseaLogo", secondTeam: "Harbor City FC", secondTeamScore: "4"),
                            H2HData(date: "23.09", firstTeamImage: "ChelseaLogo", firstTeam: "Harbor City FC", firstTeamScore: "3", secondTeamImage: "ChelseaLogo", secondTeam: "Harbor City FC", secondTeamScore: "4"),
