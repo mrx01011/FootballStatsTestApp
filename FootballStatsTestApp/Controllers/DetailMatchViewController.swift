@@ -98,7 +98,7 @@ final class DetailMatchViewController: UIViewController {
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.font = GlobalConstants.Fonts.medium16
+        label.font = GlobalConstants.Fonts.condensedMedium16
         return label
     }()
     private let secondTeamLabel: UILabel = {
@@ -106,7 +106,7 @@ final class DetailMatchViewController: UIViewController {
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.font = GlobalConstants.Fonts.medium16
+        label.font = GlobalConstants.Fonts.condensedMedium16
         return label
     }()
     private let scoreLabel: UILabel = {

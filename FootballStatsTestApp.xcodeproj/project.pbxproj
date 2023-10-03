@@ -32,6 +32,8 @@
 		FA12EC2F2AC97377004EB3ED /* H2HData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12EC2E2AC97377004EB3ED /* H2HData.swift */; };
 		FA2590672AC9C44D00FD9178 /* MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2590662AC9C44D00FD9178 /* MatchData.swift */; };
 		FA25906A2ACB1C6B00FD9178 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2590692ACB1C6B00FD9178 /* Global.swift */; };
+		FA2590712ACBD08100FD9178 /* SFPro-CondensedMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA2590702ACBD08100FD9178 /* SFPro-CondensedMedium.ttf */; };
+		FA2590732ACBD26500FD9178 /* SFPro-Condensed-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA2590722ACBD26500FD9178 /* SFPro-Condensed-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		FA12EC2E2AC97377004EB3ED /* H2HData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H2HData.swift; sourceTree = "<group>"; };
 		FA2590662AC9C44D00FD9178 /* MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchData.swift; sourceTree = "<group>"; };
 		FA2590692ACB1C6B00FD9178 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		FA2590702ACBD08100FD9178 /* SFPro-CondensedMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-CondensedMedium.ttf"; sourceTree = "<group>"; };
+		FA2590722ACBD26500FD9178 /* SFPro-Condensed-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Condensed-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,8 @@
 			children = (
 				FA12EBE42AC6392C004EB3ED /* SFProDisplay-Heavy.ttf */,
 				FA12EBE22AC63751004EB3ED /* SFProDisplay-Medium.ttf */,
+				FA2590722ACBD26500FD9178 /* SFPro-Condensed-Bold.otf */,
+				FA2590702ACBD08100FD9178 /* SFPro-CondensedMedium.ttf */,
 				FA12EBDD2AC62F22004EB3ED /* SFProDisplay-Black.ttf */,
 				FA12EBD52AC5F9F8004EB3ED /* SFProDisplay-Bold.ttf */,
 				FA12EBD42AC5F9F8004EB3ED /* SFProDisplay-Semibold.ttf */,
@@ -344,7 +350,9 @@
 				FA12EBA72AC5B18D004EB3ED /* LaunchScreen.storyboard in Resources */,
 				FA12EBD82AC5F9F8004EB3ED /* SFProDisplay-Bold.ttf in Resources */,
 				FA12EBE52AC6392C004EB3ED /* SFProDisplay-Heavy.ttf in Resources */,
+				FA2590732ACBD26500FD9178 /* SFPro-Condensed-Bold.otf in Resources */,
 				FA12EBD92AC5F9F8004EB3ED /* SFProText-Regular.ttf in Resources */,
+				FA2590712ACBD08100FD9178 /* SFPro-CondensedMedium.ttf in Resources */,
 				FA12EBA42AC5B18D004EB3ED /* Assets.xcassets in Resources */,
 				FA12EBDE2AC62F22004EB3ED /* SFProDisplay-Black.ttf in Resources */,
 				FA12EBE32AC63751004EB3ED /* SFProDisplay-Medium.ttf in Resources */,

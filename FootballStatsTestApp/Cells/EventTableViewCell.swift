@@ -27,7 +27,7 @@ final class EventTableViewCell: UITableViewCell {
     private let eventMinuteLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = GlobalConstants.Fonts.bold12
+        label.font = GlobalConstants.Fonts.bold13
         return label
     }()
     private let outerStackView: UIStackView = {

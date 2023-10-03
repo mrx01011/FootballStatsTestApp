@@ -58,7 +58,7 @@ final class MatchTableViewCell: UITableViewCell {
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
-        label.font = GlobalConstants.Fonts.medium16
+        label.font = GlobalConstants.Fonts.condensedMedium16
         return label
     }()
     private let secondTeamLabel: UILabel = {
@@ -67,7 +67,7 @@ final class MatchTableViewCell: UITableViewCell {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.font = GlobalConstants.Fonts.medium16
+        label.font = GlobalConstants.Fonts.condensedMedium16
         return label
     }()
     private let scoreLabel: UILabel = {

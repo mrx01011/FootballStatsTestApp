@@ -41,11 +41,12 @@ enum GlobalConstants {
     }
     enum Fonts {
         static let medium14 = UIFont(name: "SFProDisplay-Medium", size: 14)
-        static let medium16 = UIFont(name: "SFProDisplay-Medium", size: 16)
+        static let condensedMedium16 = UIFont(name: "SFPro-CondensedMedium", size: 16)
         static let medium17 = UIFont(name: "SFProDisplay-Medium", size: 17)
         static let heavy32 = UIFont(name: "SFProDisplay-Heavy", size: 32)
         static let semibold17 = UIFont(name: "SFProDisplay-Semibold", size: 17)
         static let bold12 = UIFont(name: "SFProDisplay-Bold", size: 12)
+        static let bold13 = UIFont(name: "SFProDisplay-Bold", size: 13)
         static let bold17 = UIFont(name: "SFProDisplay-Bold", size: 17)
         static let bold34 = UIFont(name: "SFProDisplay-Bold", size: 34)
         static let regular12 = UIFont(name: "SFProText-Regular", size: 12)
